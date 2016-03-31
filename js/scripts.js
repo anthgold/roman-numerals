@@ -1,17 +1,7 @@
 // Business Logic
-
-
-
-// User Interface Logic
 $(document).ready(function() {
   $("form#number-converter").submit(function(event) {
-    event.preventDefault();
     var arabicNumber = $("input.arabic-number").val();
-    var thousands = 0;
-    var hundreds = 0;
-    var tens = 0;
-    var ones = 0;
-
     var reverseNumber = arabicNumber.toString().split("").reverse().join("");
 
     ones = parseInt(reverseNumber.charAt(0));
@@ -21,10 +11,10 @@ $(document).ready(function() {
 
     reverseNumber = reverseNumber;
 
-    var romanThousands;
-    var romanHundreds;
-    var romanTens;
-    var romanOnes;
+    var romanThousands = '';
+    var romanHundreds = '';
+    var romanTens = '';
+    var romanOnes = '';
 
     if (thousands === 0) {
       romanThousands = "";
@@ -34,8 +24,8 @@ $(document).ready(function() {
       romanThousands = "MM";
     } else if (thousands === 3) {
       romanThousands = "MMM";
-    } else {
-      alert('Thousands place is NaN!');
+    // } else {
+    //   alert('Thousands place is NaN!');
     }
 
     if (hundreds === 0) {
@@ -58,8 +48,8 @@ $(document).ready(function() {
       romanHundreds = "DCCC";
     } else if (hundreds === 9) {
       romanHundreds = "CM";
-    } else {
-      alert('Hundreds place is NaN!');
+    // } else {
+    //   alert('Hundreds place is NaN!');
     }
 
     if (tens === 0) {
@@ -82,8 +72,8 @@ $(document).ready(function() {
       romanTens = "LXXX";
     } else if (tens === 9) {
       romanTens = "XC";
-    } else {
-      alert('Tens place is NaN!');
+    // } else {
+    //   alert('Tens place is NaN!');
     }
 
     if (ones === 0) {
@@ -106,14 +96,23 @@ $(document).ready(function() {
       romanOnes = "VIII";
     } else if (ones === 9) {
       romanOnes = "IX";
-    } else {
-      alert('Ones place is NaN!');
+    // } else {
+    //   alert('Ones place is NaN!');
     }
+
+// User Interface Logic
+
+    event.preventDefault();
+    var thousands = 0;
+    var hundreds = 0;
+    var tens = 0;
+    var ones = 0;
 
     var romanNumber = romanThousands.concat(romanHundreds,romanTens,romanOnes);
 
-    alert(arabicNumber + " in Roman numberals is: " + romanNumber);
-
+    // alert(arabicNumber + " in Roman numberals is: " + romanNumber);
+    $(".arabic-number").text(arabicNumber);
+    $("#romanNumber").text(romanNumber);
     $("#result").show();
 
   });

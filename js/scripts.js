@@ -12,8 +12,6 @@ $(document).ready(function() {
     var tens = 0;
     var ones = 0;
 
-    console.log(arabicNumber);
-
     var reverseNumber = arabicNumber.toString().split("").reverse().join("");
 
     ones = parseInt(reverseNumber.charAt(0));
@@ -23,31 +21,22 @@ $(document).ready(function() {
 
     reverseNumber = reverseNumber;
 
-    console.log(reverseNumber);
-    console.log(ones);
-    console.log(tens);
-    console.log(hundreds);
-    console.log(thousands);
-
     var romanThousands;
     var romanHundreds;
     var romanTens;
     var romanOnes;
 
-    console.log(typeof reverseNumber);
-
-    if (thousands == 0) {
+    if (thousands === 0) {
       romanThousands = "";
-    } else if (thousands == 1) {
+    } else if (thousands === 1) {
       romanThousands = "M";
-    } else if (thousands == 2) {
+    } else if (thousands === 2) {
       romanThousands = "MM";
-    } else if (thousands == 3) {
+    } else if (thousands === 3) {
       romanThousands = "MMM";
     } else {
       alert('Thousands place is NaN!');
     }
-    console.log(romanThousands);
 
     if (hundreds === 0) {
       romanHundreds = "";
@@ -72,7 +61,6 @@ $(document).ready(function() {
     } else {
       alert('Hundreds place is NaN!');
     }
-    console.log(romanHundreds);
 
     if (tens === 0) {
       romanTens = "";
@@ -97,7 +85,6 @@ $(document).ready(function() {
     } else {
       alert('Tens place is NaN!');
     }
-    console.log(romanTens);
 
     if (ones === 0) {
       romanOnes = "";
@@ -122,7 +109,6 @@ $(document).ready(function() {
     } else {
       alert('Ones place is NaN!');
     }
-    console.log(romanOnes);
 
     var romanNumber = romanThousands.concat(romanHundreds,romanTens,romanOnes);
 

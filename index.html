@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!-- Google's jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title>Roman Numeral Generator</title>
+    <title>Roman Numeral Maker</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Roman Numeral Maker</h1>
 
+      <form id="number-converter">
+        <div class="form-group">
+          <label for="form">Enter a number between 1 and 3999:</label>
+          <!-- Is type = number right? -->
+          <input class="arabic-number" type="number" min="1" max="3999">
+        </div>
+
+        <button type="submit" class="btn">Convert!</button>
+      </form>
+
+      <div id="result">
+        <p><span class="arabic-number"></span> is <span id="romanNumber"></span> in Roman numerals.</p>
+      </div>
+    </div>
   </body>
 </html>
